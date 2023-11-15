@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { IRoute, UIRoutes } from "./app-router-types";
 import AppLayout from "../../layout/AppLayout";

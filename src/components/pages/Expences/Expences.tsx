@@ -1,5 +1,11 @@
+import ExpencesList from "../../shared/ExpencesList";
+
 const Expences = () => {
-  return <></>;
+  return (
+    <>
+      <ExpencesList />
+    </>
+  );
 };
 
 export default Expences;
