@@ -4,7 +4,7 @@ type Props = {
   expense: Expense;
 };
 
-const ExpencesListItem: React.FC<Props> = ({ expense }) => {
+const ExpensesListItem: React.FC<Props> = ({ expense }) => {
   const formatDate = () => {
     const dateObject = new Date(expense.date);
 
@@ -67,4 +67,4 @@ const ExpencesListItem: React.FC<Props> = ({ expense }) => {
   );
 };
 
-export default ExpencesListItem;
+export default ExpensesListItem;

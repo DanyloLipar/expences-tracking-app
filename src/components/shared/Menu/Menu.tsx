@@ -26,13 +26,13 @@ const Menu = () => {
         />
       </Link>
 
-      <Link to={`/${UIRoutes.EXPENCES}`} color="inherit">
+      <Link to={`/${UIRoutes.EXPENSES}`} color="inherit">
         <img
           className="pt-[3px] px-[3px] w-[100%]"
           src={
-            location.pathname !== `/${UIRoutes.EXPENCES}` ? card : cardActive
+            location.pathname !== `/${UIRoutes.EXPENSES}` ? card : cardActive
           }
-          alt="expences"
+          alt="expenses"
         />
       </Link>
 

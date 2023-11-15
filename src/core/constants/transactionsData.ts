@@ -11,14 +11,14 @@ export const transactionData: Transaction[] = [
     date: "05-04-2020",
   },
   {
-    id: 1,
+    id: 2,
     logo: pumaLogo,
     name: "Puma Store",
     sum: 952,
     date: "05-04-2020",
   },
   {
-    id: 1,
+    id: 3,
     logo: pumaLogo,
     name: "Adidas Store",
     sum: 700,

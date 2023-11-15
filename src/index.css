@@ -3,3 +3,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-calendar__viewContainer,
+.react-calendar__navigation {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.calendar {
+  animation: fadeIn 0.5s ease-in-out;
+}

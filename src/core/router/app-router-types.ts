@@ -5,5 +5,5 @@ export interface IRoute {
 
 export enum UIRoutes {
   HOME = "",
-  EXPENCES = "expences",
+  EXPENSES = "expenses",
 }

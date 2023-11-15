@@ -13,6 +13,8 @@ module.exports = {
         "bg-grey": " #FAFAFA",
         green: "#2BB272",
         "card-bg": "#2F3046",
+        "calendar-arrow": "#0F172A",
+        orange: "#FF643B",
       },
       boxShadow: {
         "footer-menu": "0px 0px 4px 0px rgba(0, 0, 0, 0.09)",
