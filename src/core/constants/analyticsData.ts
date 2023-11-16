@@ -1,82 +1,10 @@
 export const analyticsData = [
   {
     id: 2022,
-    expenses: [
-      {
-        id: 1,
-        month: "Jan",
-        sum: 1234,
-      },
-      {
-        id: 2,
-        month: "Feb",
-        sum: 2234,
-      },
-      {
-        id: 3,
-        month: "Mar",
-        sum: 5234,
-      },
-      {
-        id: 4,
-        month: "Apr",
-        sum: 2234,
-      },
-      {
-        id: 5,
-        month: "May",
-        sum: 1000,
-      },
-      {
-        id: 6,
-        month: "Jun",
-        sum: 2900,
-      },
-      {
-        id: 7,
-        month: "Jul",
-        sum: 3900,
-      },
-    ],
+    expenses: [2023, 2234, 5234, 2234, 1000, 2900, 3900],
   },
   {
     id: 2023,
-    expenses: [
-      {
-        id: 1,
-        month: "Jan",
-        sum: 4234,
-      },
-      {
-        id: 2,
-        month: "Feb",
-        sum: 2234,
-      },
-      {
-        id: 3,
-        month: "Mar",
-        sum: 5234,
-      },
-      {
-        id: 4,
-        month: "Apr",
-        sum: 7234,
-      },
-      {
-        id: 5,
-        month: "May",
-        sum: 1000,
-      },
-      {
-        id: 6,
-        month: "Jun",
-        sum: 3900,
-      },
-      {
-        id: 7,
-        month: "Jul",
-        sum: 2000,
-      },
-    ],
+    expenses: [4234, 2234, 5234, 7234, 1000, 2000, 3900],
   },
 ];

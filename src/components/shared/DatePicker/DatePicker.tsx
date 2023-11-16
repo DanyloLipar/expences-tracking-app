@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { startOfWeek, addDays, format, isToday, isBefore } from "date-fns";
 import { Container } from "@mui/material";
 import classNames from "classnames";
@@ -7,32 +7,34 @@ import arrowLeft from "../../../assets/icons/arrow-left.svg";
 import arrowRight from "../../../assets/icons/arrow-right.svg";
 
 const DatePicker = () => {
-  const [date, setDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState<any>(new Date());
 
-  const startOfCurrentWeek = startOfWeek(date, { weekStartsOn: 1 });
+  const startOfCurrentWeek = startOfWeek(selectedDate, { weekStartsOn: 1 });
+
+  const handleDateChange = (day: any) => {
+    setSelectedDate(day);
+  };
 
   const renderWeekDays = () => {
     const weekDays = [];
     for (let i = 0; i < 7; i++) {
       const day = addDays(startOfCurrentWeek, i);
-      const isYesterday = isToday(addDays(day, 1));
-      const isDayBeforeYesterday = isToday(addDays(day, 2));
-      const isTwoDaysBeforeYesterday = isToday(addDays(day, 3));
 
-      const handleDateChange = (newDate: any) => {
-        setDate(newDate);
-      };
+      console.log(selectedDate.getDay() - 1);
 
       weekDays.push(
         <div
           key={i}
           onClick={() => handleDateChange(day)}
-          className="flex flex-1 flex-col justify-between text-center h-[100%]"
+          className={classNames({
+            "flex flex-1 flex-col justify-between text-center h-[100%]": true,
+            "selected-date": day.toDateString() === selectedDate.toDateString(),
+          })}
         >
           <p
             className={classNames({
               "text-[16px] text-grey-2": true,
-              "font-bold": isToday(day),
+              "font-bold": day.toDateString() === selectedDate.toDateString(),
             })}
           >
             {format(day, "EEE").charAt(0)}
@@ -42,18 +44,18 @@ const DatePicker = () => {
               "flex flex-col items-center gap-[11px] text-[16px] text-grey-2 pt-[12px] pb-[9px]":
                 true,
               "gap-[11px] bg-orange text-white text-[16px] font-extrabold rounded-[8px] pt-[12px] pb-[9px]":
-                isToday(day),
+                day.toDateString() === selectedDate.toDateString(),
             })}
           >
             <span>{format(day, "d")}</span>
             <div
               className={classNames({
                 "w-[6px] h-[6px] rounded-[90px]": true,
-                "bg-white": isToday(day),
+                "bg-white": day.toDateString() === selectedDate.toDateString(),
                 "bg-grey":
-                  isYesterday ||
-                  isDayBeforeYesterday ||
-                  isTwoDaysBeforeYesterday,
+                  new Date(selectedDate).getDate() - 1 === day.getDate() ||
+                  new Date(selectedDate).getDate() - 2 === day.getDate() ||
+                  new Date(selectedDate).getDate() - 3 === day.getDate(),
               })}
             ></div>
           </div>
@@ -69,7 +71,7 @@ const DatePicker = () => {
         <div className="flex justify-between items-center mb-[19px]">
           <button
             className="text-xl font-bold text-calendar-arrow focus:outline-none"
-            onClick={() => setDate(addDays(date, -7))}
+            onClick={() => setSelectedDate(addDays(selectedDate, -7))}
           >
             <img src={arrowLeft} alt="arrow-left" />
           </button>
@@ -78,7 +80,7 @@ const DatePicker = () => {
           </p>
           <button
             className="text-xl font-bold text-calendar-arrow focus:outline-none"
-            onClick={() => setDate(addDays(date, 7))}
+            onClick={() => setSelectedDate(addDays(selectedDate, 7))}
           >
             <img src={arrowRight} alt="arrow-right" />
           </button>
