@@ -1,5 +1,5 @@
 # Expense tracker app
-[DEMO](https://expences-tracking-mwnfwkzyi-danylolipar.vercel.app/)
+[DEMO](https://dynamic-taffy-b069a7.netlify.app/)
 
 App is a simulator of Mobile app for tracking own expenses and its design is only for mobile devices and tablets.
 In the app you have two pages Home/Expences where I created UI from mockup and added some logic for lists/analytics/calendar.
